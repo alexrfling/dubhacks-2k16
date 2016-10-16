@@ -72,23 +72,54 @@ var DisplayTable = React.createClass({
         var rows=[];
         this.props.data.forEach(function(project) {
           rows.push(
-            React.createElement("tr", {},
-              React.createElement("td", {}, project.name),
-              React.createElement("td", {}, project.description)
+            React.createElement("div", { className: "row" },
+              React.createElement("div", { className: "col-lg-12" },
+                React.createElement("div", { className: "panel panel-default" },
+                  React.createElement("div", { className: "panel-heading" },
+                    React.createElement("h4", {}, project.name,
+                      React.createElement("small", {}, project.category)
+                    ),
+                    React.createElement("a", { className: "btn btn-social-icon btn-github" },
+                      React.createElement("i", { className: "fa fa-github" })
+                    ),
+                    React.createElement("a", { className: "btn btn-social-icon btn-bitbucket" },
+                      React.createElement("i", { className: "fa fa-bitbucket" })
+                    ),
+                    React.createElement("a", { className: "btn btn-social-icon btn-facebook" },
+                      React.createElement("i", { className: "fa fa-facebook" })
+                    ),
+                    React.createElement("a", { className: "btn btn-social-icon btn-twitter" },
+                      React.createElement("i", { className: "fa fa-twitter" })
+                    ),
+                    React.createElement("a", { className: "btn btn-social-icon btn-linkedin" },
+                      React.createElement("i", { className: "fa fa-linkedin" })
+                    )
+                  ),
+                  React.createElement("div", { className: "panel-body" },
+                    React.createElement("dl", {},
+                      React.createElement("dt", {}, "Summary"),
+                      React.createElement("dd", {}, project.description),
+                      React.createElement("dt", {}, "Contributors"),
+                      React.createElement("dd", {}, "85 total, 56 in your area"),
+                      React.createElement("dt", {}, "Desired Skills"),
+                      React.createElement("dd", {}, project.desiredSkills)
+                    )
+                  ),
+                  React.createElement("div", { className: "panel-footer" },
+                    React.createElement("button", { type: "button", className: "btn btn-primary" }, "Like"),
+                    React.createElement("button", { type: "button", className: "btn btn-info" }, "Super Like"),
+                    React.createElement("button", { type: "button", className: "btn btn-success" }, "Recommend"),
+                    React.createElement("button", { type: "button", className: "btn btn-warning" }, "Save for Later"),
+                    React.createElement("button", { type: "button", className: "btn btn-danger" }, "Not Interested")
+                  )
+                )
+              )
             )
           );
         });
         //returning the table
         return(
-          React.createElement("table", {},
-            React.createElement("thead", {},
-              React.createElement("tr", {},
-                React.createElement("th", {}, "Name"),
-                React.createElement("th", {}, "Description")
-              )
-            ),
-            React.createElement("tbody", {}, rows)
-          )
+            React.createElement("div", {}, rows)
         );
     }
 });
