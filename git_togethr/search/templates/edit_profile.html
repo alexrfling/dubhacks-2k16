@@ -12,6 +12,7 @@
 
 	<title>Git-Togethr</title>
 	<link rel="icon" href="{% static 'imgs/icon3_med.png' %}">
+	<link rel="icon" href="{% static 'imgs/icon3_med.png' %}">
 	<!-- Bootstrap Core CSS -->
 	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
@@ -26,8 +27,6 @@
 
 	<!-- Custom Fonts -->
 	<link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-
-    <link href="{% static 'style.css' %}" rel="stylesheet">
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-				<a class="navbar-brand" href="index.html"><img src="../../imgs/iconlogo2.png" alt="logo" height="35" width="210"></a>
+				<a class="navbar-brand" href="index.html"><img src="{% static 'imgs/iconlogo2.png' %}" alt="logo" height="35" width="210"></a>
 			</div>
 			<!-- /.navbar-header -->
 
@@ -290,32 +289,40 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1 class="page-header">Messages</h1>
-                        <div style="float: left;">
-                            <img src="../../imgs/icon3_color2.png" height="150" width="150" >
+						<h1 class="page-header">Edit Profile</h1>
+						<div class="form-group">
+                            <label>Upload Profile Picture</label>
+                            <input type="file">
                         </div>
-                        <div>
-                       <h2>Finn Lim</h2>
-                        Yeah I'll definitely start working on that. I think I have a good idea of what to do now. Thanks for clarifying.
-                        </div>
-                        <div style="clear:both"/>
-                        <div style="float: left;">
-                            <img src="../../imgs/icon3_color3.png" height="150" width="150">
-                        </div>
-                        <div>
-                            <h2>Sally Mae</h2>
-                            Thanks for forwarding me that email. It was super helpful in my project. I really appreciate it.
-                        </div>
-                        <div style="clear:both"/>
-                        <div style="float: left;">
-                            <img src="../../imgs/icon3_color4.png" height="150" width="150" style="float: left;">
-                        </div>
-                        <div>
-                            <h2>Lisa Smith</h2>
-                            Hello, I am writing back to you in regards to our request to join our team. Unfortunately, at this time we have already filled the position. I would love to keep in contact with you if you're interested in future projects.
-                            Please let me know if this is something you are interested in. Best, Lisa.
-                        </div>
-                        <div style="clear:both"/>
+                        <div class="form-group">
+							<label>Name</label>
+							<input class="form-control" placeholder="Enter text">
+						</div>
+                        <div class="form-group">
+                             <label>Biography</label>
+                             <textarea class="form-control" rows="3"></textarea>
+                       </div>
+                       <h2>Links:</h2>
+                       <div class="form-group">
+							<label>LinkedIn</label>
+                            <i class="fa fa-linkedin-square"></i>
+							<input class="form-control" placeholder="Enter URL">
+						</div>
+                        <div class="form-group">
+							<label>GitHub</label>
+                            <i class="fa fa-github"></i>
+							<input class="form-control" placeholder="Enter URL">
+						</div>
+                        <h2>Contact Information</h2>
+                                               <div class="form-group">
+							<label>E-mail</label>
+							<input class="form-control" placeholder="Enter text">
+						</div>
+                        <div class="form-group">
+							<label>Phone Number</label>
+							<input class="form-control" placeholder="Enter text">
+						</div>
+						<button type="button" class="btn btn-primary btn-lg">Save</button>
 					</div>
 					<!-- /.col-lg-12 -->
 				</div>
@@ -341,5 +348,9 @@
 	<script src="{% static '/dist/js/sb-admin-2.js' %}"></script>
 
 </body>
+<footer>
+	<br>
+	<br>
+</footer>
 
 </html>
